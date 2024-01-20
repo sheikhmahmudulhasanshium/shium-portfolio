@@ -6,6 +6,7 @@ import { Urbanist } from 'next/font/google'
 //import Footer from '@/components/footer'
 //SHEIKH MAHMUDUL HASAN SHIUM
 import './globals.css'
+import { ThemeProvider } from '@/components/providers/theme-provider'
 
 const font = Urbanist({ subsets: ['latin'] })
 
@@ -25,7 +26,10 @@ export default function RootLayout({
         {/*<ToastProvider />
         <ModalProvider />
         <Navbar />*/}
-        {children}
+        <ThemeProvider attribute='class' defaultTheme='system'>
+            {children}
+        </ThemeProvider>
+        
         {/*<Footer />*/}
       </body>
     </html>
